@@ -64,6 +64,10 @@ Rails.application.configure do
   # want to log everything, set the level to "debug".
   config.log_level = ENV.fetch("RAILS_LOG_LEVEL", "info")
 
+  # Disable serving static files from the `/public` folder by default since
+# Apache or NGINX already handles this.
+config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present? || ENV['RENDER'].present?
+
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
 

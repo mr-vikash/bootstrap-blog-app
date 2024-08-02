@@ -21,16 +21,16 @@ background-color: lightgrey;
 }
 .card-header
 {
-    background-color: rgb(12, 182, 198);
+    background-color: rgba(12, 182, 198, 0.636);
     color: white;
 }
 .card-footer
 {
-    background-color: rgb(12, 182, 198);
+    background-color: rgba(12, 182, 198, 0.636);
     color: white;
 }
 .form-bg{
-    background-color: rgb(12, 182, 198);
+    background-color: rgba(12, 182, 198, 0.636);
 }
 
 .footer {
@@ -43,6 +43,7 @@ background-color: rgba(12, 182, 198, 0.636);
 }
 .jumbotron{
 height: 400px;
-background-color: rgb(12, 182, 198);
-background-image: image-url('background-image.jpg');
+margin-top: 40px;
+background-color: rgba(12, 182, 198, 0.636);
+// background-image: image-url('background-image.jpg');
 }
