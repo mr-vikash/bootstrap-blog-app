@@ -1,16 +1,4 @@
-<h1>Edit Article</h1>
-<%= form_with model: @article do |form| %>
-  <div>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </div>
-
-  <div>
-    <%= form.label :description %><br>
-    <%= form.text_area :description %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+<div id="page-content">
+  <h1 class="text-center mt-4">Edit article</h1>
+  <%= render 'form', article:  @article %>
+</div>
