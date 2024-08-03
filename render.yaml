@@ -1,7 +1,7 @@
 databases:
-  - name: mysite
-    databaseName: mysite
-    user: mysite
+  - name: blogapp
+    databaseName: blogapp
+    user: vikash
 
 services:
   - type: web
