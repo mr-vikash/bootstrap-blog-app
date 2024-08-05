@@ -5,7 +5,7 @@
             <% @articles.each do |article|%>
                 <div class="card text-center mt-4 shadow p-3 mb-5 bg-white rounded ">
                 <div class="card-header text-italic ">
-                    By Vikash Gupta
+                    <%= article.user.username if article.user %>
                 </div>
                 <div class="card-body">
                     <h5 class="card-title text-success"><%= article.title%></h5>
