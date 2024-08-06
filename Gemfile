@@ -71,3 +71,5 @@ gem "cssbundling-rails"
 gem 'sass-rails'
 
 gem 'pg'
+
+gem 'byebug'
