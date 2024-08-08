@@ -73,3 +73,6 @@ gem 'sass-rails'
 gem 'pg'
 
 gem 'byebug'
+
+#used for adding pagination https://github.com/mislav/will_paginate
+gem 'will_paginate', '~> 4.0'

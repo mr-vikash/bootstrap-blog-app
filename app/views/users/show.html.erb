@@ -1,13 +1,21 @@
 <h1 class="text-center">
     <%= @user.username %>
 </h1>
-<div class="text-center">
-    <%= gravatar_for(@user, size: 150)%>
+<div class="container">
+    <div class="text-center">
+        <%= gravatar_for(@user, size: 150)%>
+    </div>
+    <div class="text-center mt-2">
+        <%= link_to "Edit Profile", edit_user_path, class: "btn btn-outline-info" %>
+    </div>
+    <h3 class="text-center mt-2">
+        <%= pluralize(@user.articles.count, 'article') %>
+    </h3>
+    <div class="flickr_pagination">
+    <%= will_paginate @articles, :container => false %>
+    </div>
+    <%= render 'articles/article'%>
+    <div class="flickr_pagination mb-2">
+    <%= will_paginate @articles, :container => false %>
+    </div>
 </div>
-<div class="text-center mt-2">
-    <%= link_to "Edit Profile", edit_user_path, class: "btn btn-outline-info" %>
-</div>
-<h3 class="text-center mt-2">
-    <%= pluralize(@user.articles.count, 'article') %>
-</h3>
-<%= render 'articles/article'%>

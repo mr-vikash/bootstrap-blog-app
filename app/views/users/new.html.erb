@@ -1,4 +1,9 @@
 <h1 class="text-center">Welcome To Signup Page</h1>
+<% flash.each do |type, msg| %>
+  <div class="alert alert-info">
+    <%= msg %>
+  </div>
+<% end %>
 <div id="page-content">
   <%= render 'form', user: @user %>
 </div>
