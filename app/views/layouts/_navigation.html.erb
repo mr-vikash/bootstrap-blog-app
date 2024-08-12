@@ -21,14 +21,21 @@
             <li><%= link_to "Go to home", root_path, class: "dropdown-item" %></li>
           </ul>
         </li>
-        <% if logged_in? %>
+        <% if logged_in?  %>
           <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Profile[<%= current_user.username %>]
+           <% if current_user.admin?%>
+             <%= "Admin" %>
+           <%end%>
+           Profile[<%= current_user.username %>]
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><%= link_to "view Profile", user_path(current_user), class: "dropdown-item" %></li>
             <li><%= link_to "Edit Profile", edit_user_path(current_user), class: "dropdown-item" %></li>
+            <li><%= link_to "Delete Account", user_path(current_user), data: {
+                      turbo_method: :delete,
+                      confirm: "Are you sure ?"
+                    }, class: "dropdown-item text-danger" %></li>
           </ul>
         </li>
           <li class="nav-item">
