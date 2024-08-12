@@ -70,8 +70,6 @@ gem "cssbundling-rails"
 
 gem 'sass-rails'
 
-gem "pg", "~> 1.1"
-
 gem 'byebug'
 
 #used for adding pagination https://github.com/mislav/will_paginate
