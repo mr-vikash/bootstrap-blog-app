@@ -22,6 +22,21 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
+    @articles = @category.articles.paginate(page: params[:page], per_page: 5)
+  end
+
+  def edit
+    @category = Category.find(params[:id])
+  end
+
+  def update
+    @category = Category.find(params[:id])
+    if @category.update(category_params)
+      flash[:notice] = "Category updated successfully"
+      redirect_to @category
+    else
+      render 'edit'
+    end
   end
 
   private
@@ -32,8 +47,8 @@ class CategoriesController < ApplicationController
 
   def require_admin
     if !(logged_in? && current_user.admin?)
-      flash[:alert] = "Only admin can perform that action"
-      redirect_to category_path
+      flash[:alert] = "Only admin can perform this action"
+      redirect_to categories_path
     end
   end
 end

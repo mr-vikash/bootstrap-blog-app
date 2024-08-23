@@ -8,6 +8,9 @@
                       <%= link_to article.user.username , user_path(article.user) %>
                       <%= link_to gravatar_for(article.user), user_path(article.user) %>
                     <% end %>
+                    <% if article.categories.any?%>
+                      <%= render article.categories %>
+                    <%end%>
                 </div>
                 <div class="card-body">
                     <h5 class="card-title text-success"><%= article.title %></h5>
